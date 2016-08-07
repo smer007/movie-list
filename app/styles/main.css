@@ -48,6 +48,15 @@ h2{
 .right-column{
   box-shadow: -2px 0px 10px #888888;
 }
+.left-column .img-circle{
+  width: 122px;
+  height: 122px;
+}
+.left-column .img-container{
+  text-align: center;
+  line-height: 0px; 
+  margin: 25px auto;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   

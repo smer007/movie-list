@@ -17,13 +17,13 @@ function MainController(movieDtlsService) {
 		mainVm.parts=[];
 		mainVm.log=[];
       movieDtlsService.getCollection().then(function (result) {
-	  // console.log('result', result);
+	  console.log('result', result);
 	  mainVm.parts = result.parts;
-	  // console.log('parts', mainVm.parts);
+	  console.log('parts', mainVm.parts);
 	  angular.forEach(mainVm.parts, function(value, key) {
 		  this.push(value.id);
 		}, mainVm.log);
-	  // console.log('log', mainVm.log);
+	  console.log('log', mainVm.log);
 	  
 	  
 	}, function (error) {
