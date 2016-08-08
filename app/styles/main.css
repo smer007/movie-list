@@ -56,6 +56,7 @@ h2{
 }
 .right-column{
   box-shadow: -2px 0px 10px #888888;
+  font-weight: 100;
 }
 
 .right-column .right-column-movie-details-h1, .right-column-movie-credits-h1 {
@@ -84,6 +85,15 @@ h2{
 }
 .right-column-movie-details .movie-crew, .right-column-movie-details .movie-summary{
   padding-right: 30px;
+}
+.right-column-movie-details .movie-summary {
+    margin-top: 40px;
+}
+.movie-crew .movie-crew-headline-bold{
+  font-weight: 600;
+}
+.movie-crew p{
+  margin: 0 0 0px;
 }
 .right-column-movie-credits-large-icon{
   padding-right: 30px;

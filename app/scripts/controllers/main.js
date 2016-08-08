@@ -52,7 +52,7 @@ function MainController(movieDtlsService) {
 				  console.log('err', error.status);
 				}).
 				then(function (argument) {
-					mainVm.getmovieDtls(0);
+					// mainVm.getmovieDtls(0);
 				})
 		  	})(this[key]);
 		  	
