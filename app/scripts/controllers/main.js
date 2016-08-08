@@ -91,6 +91,9 @@ function MainController(movieDtlsService) {
 			  
 			});
 			mainVm.movieDt.largeIcon = mainVm.movieDt.profile[0].profile_path;
+			// var elem = $(".left-column .img-circle")[id];
+			// elem.style.color="red";
+			// console.log('elem', elem);
       	}
 
 		// this function is called when a star cast on the right column is clicked

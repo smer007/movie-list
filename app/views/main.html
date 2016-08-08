@@ -7,10 +7,9 @@
         <img src="https://image.tmdb.org/t/p/w300{{movie.backdrop_path}}" 
         class="img-circle center-block"
         alt="Responsive image" 
-        ng-click="mainVm.getmovieDtls($index); mainVm.rightCol='true'; fontColor={'color':'#1A9DBA'}; borderColor={'border':'6px solid #1A9DBA'}"
-        ng-mouseover="count = true"
-        ng-mouseout="count = false"
-        ng-style="borderColor">
+        ng-click="mainVm.getmovieDtls($index); mainVm.rightCol='true'; fontColor={'color':'#1A9DBA'}; borderColor={'border':'6px solid #1A9DBA'}; mainVm.blur='false'"
+        ng-blur="borderOff={'border':'0px'}; mainVm.blur='true'"        
+        ng-style="(mainVm.blur == 'true')?borderOff:borderColor">
         <h2 ng-style="fontColor">{{movie.title}}</h2>
         <p class="director">{{movie.director}}</p>
     </div>
