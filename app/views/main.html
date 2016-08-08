@@ -4,13 +4,56 @@
 
     
     <div class="col-sm-6 img-container" ng-repeat="movie in mainVm.parts">
-        <img src="http://image.tmdb.org/t/p/w300/{{movie.backdrop_path}}" class="img-circle center-block" alt="Responsive image">
+        <img src="https://image.tmdb.org/t/p/w300{{movie.backdrop_path}}" 
+        class="img-circle center-block"
+        alt="Responsive image" 
+        ng-click="mainVm.getmovieDtls($index);"
+        ng-mouseover="count = true"
+        ng-mouseout="count = false">
         <h2>{{movie.title}}</h2>
-        <p>Director</p>
+        <p class="director">{{movie.director}}</p>
     </div>
     
   </div>
   <div class="col-xs-8 right-column">
-    <h1>stand by me</h1>
+    <h1>{{mainVm.movieDt.title}}</h1>
+
+    <div class="row right-column-movie-details">
+      <div class="col-sm-4 img-container">
+          <img src="https://image.tmdb.org/t/p/w185{{mainVm.movieDt.posterPath}}" 
+            class="center-block poster"
+            alt="Responsive image">
+        </div>
+        <div class="col-sm-8">
+          <div class="movie-crew">
+            <h2 class="movie-crew-headline">who made it?</h2>
+            <p class="movie-crew-director">Director: {{mainVm.movieDt.director}}</p>
+            <p class="movie-crew-writers">Writers: {{mainVm.movieDt.writers}}</p>
+            <p class="movie-crew-stars">Stars: {{mainVm.movieDt.stars}}</p>
+          </div>
+
+          <div class="movie-summary">
+            <h2 class="movie-summary-headline">what&rsquo;s it about?</h2>
+            <p class="movie-summary-overview">{{mainVm.movieDt.overview}}</p>
+          </div>
+          
+        </div>
+    </div>
+
+    <div class="row right-column-movie-credits">
+      <div class="col-sm-5 img-container">
+          <div class="col-sm-4">
+            
+          </div>
+          <div class="col-sm-8">
+            
+          </div>
+        </div>
+        <div class="col-sm-7">
+          
+          
+        </div>
+    </div>
+    
   </div>
 </div>
