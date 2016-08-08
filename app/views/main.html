@@ -3,14 +3,15 @@
     <h1 class="left-column-h1">browse movies</h1>
 
     
-    <div class="col-sm-6 img-container" ng-repeat="movie in mainVm.parts">
+    <div class="col-sm-6 img-container" ng-repeat="movie in mainVm.parts" ng-style="fontColor">
         <img src="https://image.tmdb.org/t/p/w300{{movie.backdrop_path}}" 
         class="img-circle center-block"
         alt="Responsive image" 
-        ng-click="mainVm.getmovieDtls($index); mainVm.rightCol='true';"
+        ng-click="mainVm.getmovieDtls($index); mainVm.rightCol='true'; fontColor={'color':'#1A9DBA'}; borderColor={'border':'6px solid #1A9DBA'}"
         ng-mouseover="count = true"
-        ng-mouseout="count = false">
-        <h2>{{movie.title}}</h2>
+        ng-mouseout="count = false"
+        ng-style="borderColor">
+        <h2 ng-style="fontColor">{{movie.title}}</h2>
         <p class="director">{{movie.director}}</p>
     </div>
     
@@ -44,15 +45,17 @@
     <div class="row right-column-movie-credits">
     <h1 class="right-column-movie-credits-h1">movie credits</h1>
         <div class="col-sm-5 row right-column-movie-credits-lists">
-          <div ng-repeat="value in mainVm.movieDt.profile" class="row right-column-movie-credits-lists-section">
+          <div ng-repeat="value in mainVm.movieDt.profile" class="row right-column-movie-credits-lists-section" ng-style="fontColor">
             <div class="col-sm-4">
               <img src="https://image.tmdb.org/t/p/w92{{value.profile_path}}" 
               class="img-circle center-block profile-small-icon"
               alt="Responsive image"
-              ng-click="mainVm.getLargeIcon($index);">
+              ng-click="mainVm.getLargeIcon($index);
+              fontColor={'color':'#1A9DBA'}; borderColor={'border':'4px solid #1A9DBA'}"
+              ng-style="borderColor">
             </div>
             <div class="col-sm-8 right-column-movie-credits-lists-names">
-              <h2>{{value.name}}</h2>
+              <h2 ng-style="fontColor">{{value.name}}</h2>
               <p class="character">{{value.character}}</p>
             </div>  
           </div>

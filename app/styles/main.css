@@ -101,6 +101,7 @@ h2{
 .left-column .img-circle{
   width: 122px;
   height: 122px;
+  box-sizing: content-box;
 }
 .left-column .img-container{
   text-align: center;
@@ -122,6 +123,7 @@ h2{
 .right-column .profile-small-icon{
   width: 66px;
   height: 66px;
+  box-sizing: content-box;
 }
 .right-column .profile-large-icon{
   width: 347px;
