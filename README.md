@@ -11,3 +11,4 @@ Run 'karma karma.conf.js' in the project folder for unit tests.
 Assumptions:
 -Showing 'terminator' movie series of collections.
 -Showing five casts per movie.
+-Assuming user has to click a movie to see details.
