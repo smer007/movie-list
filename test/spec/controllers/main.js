@@ -17,7 +17,7 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  it('', function () {
-    
+  it('movie details should be defined', function () {
+    expect("MainCtrl.movieDt").toBeDefined();
   });
 });
