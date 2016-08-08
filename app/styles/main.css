@@ -129,6 +129,10 @@ h2{
   width: 347px;
   height: 420px;
 }
+
+.initial-text{
+  top: 25px;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   
