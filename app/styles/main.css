@@ -43,13 +43,50 @@ h2{
 
 .left-column, .right-column{
   padding-top: 10px;
-  height: 100vh;
+  padding-left: 15px;
+  padding-right: 15px;
+  /*height: 100vh;*/
 }
 .left-column{
   background-color: #e6e6e6;
 }
+.left-column .left-column-h1 {
+    margin-left: 15px;
+    margin-right: 15px;
+}
 .right-column{
   box-shadow: -2px 0px 10px #888888;
+}
+
+.right-column .right-column-movie-details-h1, .right-column-movie-credits-h1 {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.right-column-movie-details, .right-column-movie-credits {
+    padding: 0 20px;
+}
+.right-column-movie-details .movie-crew-details{
+  padding-left: 0px;
+}
+.right-column-movie-credits-lists div{
+  padding-right: 0px;
+  padding-left: 20px;
+  line-height: 0;
+}
+.right-column-movie-credits-lists{
+  padding-top: 20px;
+}
+.right-column-movie-credits-lists-names h2{
+  margin-top: 10px;
+}
+.right-column-movie-credits-lists-section {
+    margin-bottom: 10px;
+}
+.right-column-movie-details .movie-crew, .right-column-movie-details .movie-summary{
+  padding-right: 30px;
+}
+.right-column-movie-credits-large-icon{
+  padding-right: 30px;
 }
 .left-column .img-circle{
   width: 122px;
@@ -72,8 +109,18 @@ h2{
 .right-column .img-container{
   margin: 20px auto;
 }
+.right-column .profile-small-icon{
+  width: 66px;
+  height: 66px;
+}
+.right-column .profile-large-icon{
+  width: 347px;
+  height: 420px;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   
 
 }
+padding-left: 15px;
+padding-right: 15px;

@@ -1,13 +1,13 @@
 <div class="row" ng-controller="MainCtrl as mainVm">
   <div class="col-xs-4 left-column">
-    <h1>browse movies</h1>
+    <h1 class="left-column-h1">browse movies</h1>
 
     
     <div class="col-sm-6 img-container" ng-repeat="movie in mainVm.parts">
         <img src="https://image.tmdb.org/t/p/w300{{movie.backdrop_path}}" 
         class="img-circle center-block"
         alt="Responsive image" 
-        ng-click="mainVm.getmovieDtls($index);"
+        ng-click="mainVm.getmovieDtls($index); mainVm.rightCol='true';"
         ng-mouseover="count = true"
         ng-mouseout="count = false">
         <h2>{{movie.title}}</h2>
@@ -15,16 +15,17 @@
     </div>
     
   </div>
-  <div class="col-xs-8 right-column">
-    <h1>{{mainVm.movieDt.title}}</h1>
+  <div class="col-xs-8 right-column" ng-show="mainVm.rightCol">
+    
 
     <div class="row right-column-movie-details">
+    <h1 class="right-column-movie-details-h1">{{mainVm.movieDt.title}}</h1>
       <div class="col-sm-4 img-container">
           <img src="https://image.tmdb.org/t/p/w185{{mainVm.movieDt.posterPath}}" 
             class="center-block poster"
             alt="Responsive image">
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-8 movie-crew-details">
           <div class="movie-crew">
             <h2 class="movie-crew-headline">who made it?</h2>
             <p class="movie-crew-director">Director: {{mainVm.movieDt.director}}</p>
@@ -41,16 +42,26 @@
     </div>
 
     <div class="row right-column-movie-credits">
-      <div class="col-sm-5 img-container">
-          <div class="col-sm-4">
-            
+    <h1 class="right-column-movie-credits-h1">movie credits</h1>
+        <div class="col-sm-5 row right-column-movie-credits-lists">
+          <div ng-repeat="value in mainVm.movieDt.profile" class="row right-column-movie-credits-lists-section">
+            <div class="col-sm-4">
+              <img src="https://image.tmdb.org/t/p/w92{{value.profile_path}}" 
+              class="img-circle center-block profile-small-icon"
+              alt="Responsive image"
+              ng-click="mainVm.getLargeIcon($index);">
+            </div>
+            <div class="col-sm-8 right-column-movie-credits-lists-names">
+              <h2>{{value.name}}</h2>
+              <p class="character">{{value.character}}</p>
+            </div>  
           </div>
-          <div class="col-sm-8">
-            
-          </div>
-        </div>
-        <div class="col-sm-7">
           
+        </div>
+        <div class="col-sm-7 text-right right-column-movie-credits-large-icon">
+          <img src="https://image.tmdb.org/t/p/w500{{mainVm.movieDt.largeIcon}}" 
+              class="profile-large-icon"
+              alt="Responsive image">
           
         </div>
     </div>

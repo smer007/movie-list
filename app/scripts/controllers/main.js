@@ -50,6 +50,9 @@ function MainController(movieDtlsService) {
 					// console.log('mainVm.movieCreditsList', mainVm.movieCreditsList);
 				}, function (error) {
 				  console.log('err', error.status);
+				}).
+				then(function (argument) {
+					mainVm.getmovieDtls(0);
 				})
 		  	})(this[key]);
 		  	
@@ -66,10 +69,10 @@ function MainController(movieDtlsService) {
       	
       	
       	mainVm.getmovieDtls = function (id) {
-      	console.log('index', id);
-      	console.log('mainVm.movieDtlsList', mainVm.movieDtlsList[id]);
-      	console.log('mainVm.movieCreditsList', mainVm.movieCreditsList[id]);
-      	console.log('id', mainVm.parts[id].id);
+      	// console.log('index', id);
+      	// console.log('mainVm.movieDtlsList', mainVm.movieDtlsList[id]);
+      	// console.log('mainVm.movieCreditsList', mainVm.movieCreditsList[id]);
+      	// console.log('id', mainVm.parts[id].id);
       	mainVm.movieDt.title = mainVm.movieDtlsList[id].title;
       	mainVm.movieDt.posterPath = mainVm.movieDtlsList[id].poster_path;
       	mainVm.movieDt.director = mainVm.movieCreditsList[id].crew[0].name;
@@ -86,6 +89,34 @@ function MainController(movieDtlsService) {
 		mainVm.movieDt.writers = mainVm.movieDt.writers.slice(0, -2);
 
 		mainVm.movieDt.overview = mainVm.movieDtlsList[id].overview;
+
+		mainVm.movieDt.profile=[];
+		angular.forEach(mainVm.movieCreditsList[id].cast, function(value, key) {
+			if (key <5) {
+				mainVm.movieDt.profile.push({
+	  			"character":mainVm.movieCreditsList[id].cast[key].character,
+	  			"name":mainVm.movieCreditsList[id].cast[key].name,
+	  			"profile_path":mainVm.movieCreditsList[id].cast[key].profile_path
+	  			});		
+			}	
+	  		
+		  
+		});
+		// console.log('mainVm.movieDt.profile_path', mainVm.movieDt.profile);
+		mainVm.movieDt.largeIcon = mainVm.movieDt.profile[0].profile_path;
       }
 
+
+      mainVm.getLargeIcon = function (index) {
+      	mainVm.movieDt.largeIcon = mainVm.movieDt.profile[index].profile_path;
+      }
+
+// var init = function () {
+//   //initital load
+// };
+// // and fire it after definition
+// init();
   };
+
+
+  
